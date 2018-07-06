@@ -70,3 +70,5 @@ alert(isReady);
 
 let userName = prompt("What is your name?", "John Doe");//if left empty the second part acts like a place holder
 console.log(userName);
+
+//make gh pages  settings tab of your repository. Drop down thing there and se it as master.
