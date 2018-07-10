@@ -3,13 +3,17 @@ let lastName = prompt("Please enter your last name");
 console.log(firstName);
 
 alert ("Your last name is "+lastName);
-var today = new Date();
-var day = today.getDate();
-var month = today.getMonth()+1;
-var year = today.getFullYear();
-var today = month + '/' + day + '/' + year;
-let birthDay = prompt("When is your birthday? ",  today);
+// var today = new Date();
+// var day = today.getDate();
+// var month = today.getMonth()+1;
+// var year = today.getFullYear();
+// var today = month + '/' + day + '/' + year;
+let birthDay = new Date(prompt("When is your birthday? ", "5/21/2000"));
 alert ("The birthday you entered is "+birthDay);
+
+let confirmBday = confirm (`Is ${brithday} your correct birthday?`);
+if(confirmBday) alert (`${birthday} is in fact your birthday!`);
+
 
 
 //
