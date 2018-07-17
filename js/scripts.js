@@ -1,12 +1,65 @@
-let myArray=[]; //Most basic for of myArray
-let favoriteFoods = ["pizza", "hamburgers", "french fries"];
-let allTheThings = ["string", 23, ["stuff"], {}, false]; //arrays are places were information is stored. only takes the 6 variable? types.
-//arrays start at zero and count up. The legth of the allTheThings array is 4 but is counts from 0-3.
-console.log(favoriteFoods[1]); //prints "hamburgers"
+// const captains = [`Kirk`, `Picard`, `Sisko`, `Janeway`, `Lorca`];
+// captains.forEach(captain => { // adding a "," and adding "index" into the parentisies of both captains makes them back into indexs. Ex (captain, index)
+//   console.log(captain);//does not have to be "index" as long as another variable is there.
+// })
 
-//alert(favoriteFoods.length); //gives many members
+//FOR ... OF
+// const captains = [`Kirk`, `Picard`, `Sisko`, `Janeway`, `Lorca`];
+// for(let captain of captains) {} // first variable is nambed whatever I want. Second value must be an array.
+//   console.log(`Hellow Captain ${captain}`);
 
-let aboutMe = ["avenger", 7, true, 2010];
+
+// //for..in is for objects
+// const me = {
+//   firstName: 'J.R',
+//   lastName: 'Wiggum',
+//   age: 40
+// }
+//
+//
+// for(let property in me){
+//   console.log(me[prperty]);
+// }
+
+
+
+
+// for (let i = 0; i < 11; i++) {
+//   console.log(`This number ${i*10}`);
+// }
+//
+// const colors = ["blue", "purple", "green", "red"];
+// for(let index = 0; index < colors.length; index++){
+//   console.log(colors[index]);
+// }
+
+
+
+// let counter = 0
+// while(counter < 5) {
+//   console.log(`before ${counter}`);
+//   counter++;
+//   console.log(`after ${counter}`);
+//
+// }
+
+
+
+
+
+
+
+
+
+// let myArray=[]; //Most basic for of myArray
+// let favoriteFoods = ["pizza", "hamburgers", "french fries"];
+// let allTheThings = ["string", 23, ["stuff"], {}, false]; //arrays are places were information is stored. only takes the 6 variable? types.
+// //arrays start at zero and count up. The legth of the allTheThings array is 4 but is counts from 0-3.
+// console.log(favoriteFoods[1]); //prints "hamburgers"
+//
+// //alert(favoriteFoods.length); //gives many members
+//
+// let aboutMe = ["avenger", 7, true, 2010];
 // console.log(aboutMe);
 // console.log(aboutMe.length);
 //
@@ -39,8 +92,8 @@ let aboutMe = ["avenger", 7, true, 2010];
 //
 
 //slice
-let copy = aboutMe.slice(1, 4);
-console.log(copy, aboutMe);
+// let copy = aboutMe.slice(1, 4);
+// console.log(copy, aboutMe);
 
 //IndexOf
 // let removeIndex = aboutMe.indexOf(7); //returns the indes of 42 in our aboutMe.
@@ -67,14 +120,20 @@ let movie2 =["Matrix", "Neo"];
 let movie3 =["space balls", "Barf"];
 let movie4 =["starwars", "Luke"];
 
+let choice = prompt("name a movie")
 favMovies.push(movie1, movie2, movie3, movie4);
 console.log(favMovies);
 
-let titles = [];
-titles.push(favMovies[0][0],favMovies[1][0],favMovies[2][0], favMovies[3][0]);
-alert(titles);
+for (var i = 0; i < favMovies.length; i++) {
+  if(choice === favMovies[i][0]) alert(`${favMovies[i][0]}, ${favMovies[i][1]}`);
 
-let favAndLeast = [];
-favAndLeast.push(favMovies[0], favMovies[4]);
-console.log(favAndLeast);
-alert(favMovies.length);
+}
+//
+// let titles = [];
+// titles.push(favMovies[0][0],favMovies[1][0],favMovies[2][0], favMovies[3][0]);
+// alert(titles);
+//
+// let favAndLeast = [];
+// favAndLeast.push(favMovies[0], favMovies[4]);
+// console.log(favAndLeast);
+// alert(favMovies.length);
