@@ -1,4 +1,4 @@
-//More dom stuff!!!
+/*//More dom stuff!!!
 const div = document.querySelector('.myDiv');
 //console.log(div.textContent); //returns text (only) in All Children
 //div.textContent = 'eat cheese and die!!!';
@@ -22,3 +22,23 @@ div.appendChild(newP);
 
 //Takehome
 //do the try it out "clone repository"
+*/
+
+//FizzBuzz
+let body = document.querySelector("body");
+let script = document.querySelector("script");
+for (let i = 1; i <= 100; i++) {
+  let newP = document.createElement("p");
+  if (i % 3 === 0 && i % 5 === 0) {
+    newP.textContent = "FizzBuzz";
+  }else if (i % 3 === 0){
+    newP.textContent = "Fizz";
+  } else if(i % 5 === 0){
+    newP.textContent = "Buzz";
+  }else{
+    newP.textContent = i;
+  }
+  body.insertBefore(newP, script);
+}
+
+//DO TAKEHOME DAY7
