@@ -1,43 +1,92 @@
-//prototype inheritance
-let sentence = new String("Ann went walking one day.");
-let number = new Number(32);
-//console.log(Object.getPrototypeOf(sentence));
+// let clearBtn = document.querySelector("#clearBtn")
+// let myTimeout;
+// let annoyingPopup = () =>{
+//   alert("HEY!! Have you seen my Insane and wacky discounts?!?!?");
+// };
+//
+// setTimeout(
+//   () => {alert("hey guy, your're cool!")},
+//   5000
+// );
+//
+// function startTimer(){
+//   myTimeout = setTimeout(annoyingPopup, 5000);
+// };
+//
+// startTimer();
+//
+// function cancelTimer(){
+//   clearTimeout(myTimeout);
+// }
+// clearBtn.addEventListener("click", cancelTimer);
 
-let dude = { //most basic way to create ana object
-  catchPhrase: "Where's my car?",//KEY : VALUE pair, which makes a PROPERTY
-  firstName: "Big",
-  lastName: "Lebowski",
-  age: Infinity
+// let myInterval;
+//
+// function remindUser(){
+//   alert("hey ballons");
+// };
+//
+// myInterval = setInterval(remindUser, 3000);
+//
+// function clear(){
+//   clearInterval(myInterval);
+// };
+//
+// clearBtn.addEventListener("click", clear);
+
+//Lets try it out =============================================================
+// let clearIntervalBtn = document.querySelector("#clearIntervalBtn");
+// let clearTimeoutBtn = document.querySelector("#clearTimeoutBtn");
+// let timeOutAnswer = prompt("how long you you wanna wait?", "5 seconds")
+// let intervalAnswer = prompt("how long do you wanna wait for interval")
+// let timeoutReference;
+// let intervalReference;
+//
+// let quotes = ['be kind', 'stay kind', 'have grit not pride', 'shoot first'];
+// function  createTimer(time, type){
+//   let endIndex = time.indexOf(" "); /// grabs stuff from before the first space: //If no space is entered you will get a "-1"
+//   let parsedTime = parseInt(time.substring(0, endIndex));
+//   if(!isNaN(parsedTime)){
+//     parsedTime *= 1000; //this changes the value of parsedTime
+//     if (type === "timeout"){
+//       timeoutReference = setTimeout(alertRandomQuote, parsedTime);
+//     }else if(type ==="interval"){
+//       intervalReference = setInterval(alertRandomQuote, parsedTime);
+//     }
+//   }else{
+//     console.log("Oh no!!!");
+//   }
+// };
+//
+// function alertRandomQuote() {
+//   let maxIndex = quotes.length -1;
+//   let indexToChoose =Math.floor(Math.random() * maxIndex);
+//   alert(quotes[indexToChoose])
+// }
+//
+// createTimer(timeOutAnswer, "timeout");
+//
+// createTimer(intervalAnswer, "interval");
+//
+//
+// clearIntervalBtn.addEventListener("click", ()=> {
+//   clearInterval(intervalReference);
+// });
+// clearTimeoutBtn.addEventListener("click", () =>{
+//   clearTimeout(timeoutReference);
+// })
+
+//LOCALSTORAGE/ Session storage===================================
+let firstName = prompt("whats your first name?");
+
+function storeUserInfor(){
+  if(!sesstionStorage.getItem("firstName")){
+    let firstName = prompt("whats your first name?");
+    sessionStorage.setItem("firstName",firstName);
+  }
 };
-//console.log(Object.getPrototypeOf(dude));//Object
 
-//constructor funcion
-function User(name, email, password, favorites, cart) {
-  this.name = name;
-  this.email = email;
-  this.password= password;
-  this.favorites = favorites;
-  this.cart = cart;
-};//4th way to bind this
+storeUserInfo();
 
-let cody = new User("cody", "code-man-5000@gmail.com",//the new here tells javascript to make a new object rather than just run the function
-"123456", [], []);
-//console.log(cody);
-
-let ryeker = new User("Ryeker", "best_teacher$truth.com", "11111", [], []);
-ryeker.isAdmin = true;//dot notation
-ryeker["isAdmin"] = true //bracket notaion
-//ryeker.42 = false;
-console.log(ryeker);
-
-
-
-//Try it out
-const userForm = document.forms.userForm;
-userForm.addEventListener("submit", e =>{
-  e.preventDefault()
-
-
-let newUser = new User(userForm.name.value, userForm.email.value, userForm.password.value, [], [])//value is exacty what was entered.
-console.log(newUser);
-})
+let retrievedValue = sessionStorage.getItem("firstName");
+alert(`Hello ${retrievedValue}!`)
